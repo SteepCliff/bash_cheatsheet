@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Navigation}{1}{}%
+\contentsline {section}{\numberline {2}Listing Files}{1}{}%
+\contentsline {section}{\numberline {3}Reading files}{1}{}%
+\contentsline {section}{\numberline {4}Files management}{1}{}%
+\contentsline {section}{\numberline {5}Wildcards}{1}{}%
+\contentsline {section}{\numberline {6}Finding files}{2}{}%
+\contentsline {section}{\numberline {7}Pipeline}{2}{}%
+\contentsline {section}{\numberline {8}grep, sed, cut and awk}{2}{}%
+\contentsline {section}{\numberline {9}Comparing files}{3}{}%
+\contentsline {section}{\numberline {10}Editing files from command line}{3}{}%

@@ -1,0 +1,152 @@
+\documentclass[a4paper,12pts]{article}
+
+
+\usepackage[utf8]{inputenc}
+\setlength\parindent{0pt}
+
+\begin{document}
+\title{Bash Cheat Sheet}
+\author{Stephane Espitia}
+\date{\today}
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+
+\section{Navigation}
+\begin{itemize}
+    \item \textit{pwd}: print working directory
+    \item \textit{cd}: change directory according to path given
+\end{itemize}
+
+\section{Listing Files}
+\begin{itemize}
+    \item ls: listing a directory content, common option: 
+       \begin{itemize}
+           \item -l list format
+           \item -a all files even hidden ones
+       \end{itemize}
+\end{itemize}
+
+\section{Reading files}
+\begin{itemize}
+    \item \textit{cat}: allow to read a file's content, common options:
+        \begin{itemize}
+            \item -n line numbering in the output
+        \end{itemize}
+    \item \textit{more}: display one screen at a time when the file is large
+    \item \textit{less}: a version more sophisticated of \textit{more} with
+        navigation forward and backward option +F monitor changes in the file
+        (monitoring log files)
+    \item \textit{head}: allow to print top N number of lines from a file
+    \item \textit{tail}: allow to print last N number of lines from a file
+\end{itemize}
+
+\section{Files management}
+\begin{itemize}
+    \item \textit{touch}: create a file
+    \item \textit{rm}: delete files or directory (no going back!) 
+    \item \textit{mkdir}: create directory
+    \item \textit{rmdir}: delete directory if empty
+    \item \textit{mv}: move file
+    \item \textit{cp}: copy file
+    \item \textit{ln}: create symlink with the -s option    
+\end{itemize}
+
+\section{Wildcards}
+\begin{itemize}
+    \item using the Wildcards for file management
+    \item * replace any chain of character
+    \item ? replace only one character
+    \item a-z any character from a to z small caps
+    \item 0-9 any digit
+\end{itemize}
+
+\section{Finding files}
+\begin{itemize}
+    \item \textit{which}: search in the PATH to find a file
+    \item \textit{locate}: find a path of a binary
+    \item \textit{find}: find allow to walk a hierarchy to search for files and
+        directories. The main options are:
+        \begin{itemize}
+            \item \textit{-name}: search by name
+            \item \textit{-iname}: search by name case insensitive
+            \item \textit{-type f/d/l/s}: search by type (files, directories,
+                links, sockets)
+            \item \textit{-size}: search by file size
+            \item \textit{-user}: search by user
+        \end{itemize}
+\end{itemize}
+
+\section{Pipeline}
+Every program running on the command line in Linux has 3 data streams:
+\begin{itemize}
+    \item \textit{STDIN(0)}: standard input
+    \item \textit{STDOUT(1)}: standard output
+    \item \textit{STDERR(2)}: standard error
+\end{itemize}
+Pipping and redirection means that we may connect these streams between
+different programs (STDOUT of one program to the STDIN of another) 
+
+\section{grep, sed, cut and awk}
+\begin{itemize}
+    \item \textit{grep}: searches text files for a given regex. Common option -r
+        for recursive
+    \item \textit{sed}: stream editor, text editing on stream text
+    \item \textit{cut}: extract a section of text from a line. Common options:
+        \begin{itemize}
+            \item \textit{-f}: field number
+            \item \textit{-d}: field delimiter
+        \end{itemize}
+    \item \textit{awk}: programming language for text processing. Common
+        options:
+        \begin{itemize}
+            \item \textit{-F}: field separator
+            \item \textit{print}: subcommand which outputs the result
+        \end{itemize}
+\end{itemize}
+
+\section{Comparing files}
+\begin{itemize}
+    \item \textit{comm}: compares two text files. Output three columns:
+        \begin{itemize}
+            \item \textit{column 1}: lines that are unique to the first file
+            \item \textit{column 2}: lines that are unique to the second file
+            \item \textit{column 3}: lines that are shared by both file
+        \end{itemize}
+        \textit {option -n} where n is either 1, 2 or 3 to suppress the columns
+        not needed
+    \item \textit{diff}: detect differences between files. Popular format
+        options:
+        \begin{itemize}
+            \item \textit{-c}: context format
+            \item \textit{-u}: unified format
+            \item \textit{-B}: skip blank line
+            \item \textit{-d}: smallest set of differences
+        \end{itemize}
+
+\end{itemize}
+\section{Editing files from command line}
+\begin{itemize}
+    \item \textit{nano}: simple text editor not installed by default on linux
+        \begin{itemize}
+            \item \textit{ctrl + O}: save a file
+            \item \textit{ctrl + X}: exit the editor
+            \item \textit{ctrl + W}: search for a string
+        \end{itemize}
+    \item \textit{vi or vim}: powerful text editor installed by default on most
+        linux system
+        \begin{itemize}
+            \item \textit{:q}: quit the file without saving (normal mode)
+            \item \textit{:w}: write the file (normal mode)
+            \item \textit{i}: entering in insert mode
+            \item \textit{ESC}: come back in normal mode
+
+
+        \end{itemize}
+\end{itemize}
+
+\end{document}
